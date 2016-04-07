@@ -1,0 +1,7 @@
+﻿<h3>Welcome</h3>
+
+<p>You can add edit this page by opening the file manager and editing /infopages/about.txt.  HTML tags can be used.</p>
+
+<p>Also, it is recommended that you create a first post and upload some photos to the /photos/gallery folder.  The gallery will automatically generate thumbnails and a photo description text file.</p>
+
+

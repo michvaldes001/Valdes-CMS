@@ -1,0 +1,60 @@
+<html>
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="utf-16"/>
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+
+<link href='includes/layout.css' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+
+
+<body>
+
+<?php require_once('includes/header.php');?>
+
+	<div id = "main_container">
+
+	<?php $current_section = $_GET['section_id'];
+
+		switch($current_section){
+			case 'About':
+				echo file_get_contents('infopages/about.txt');
+				break;
+
+			case 'Gallery':
+				require_once('includes/photorender.php');
+				$photo_render = new PHOTO_RENDER();
+				$photo_render -> gallery_directory();
+				break;
+
+
+			default:
+				require_once('includes/dateset.php');
+				require_once('includes/postrender.php');
+				$post_render = new POST_RENDER();
+				echo '<div id = "post_container">';
+				$post_render -> display_posts();
+	
+				echo '</div>';
+				echo '<div id = "post_history_container">';
+				$post_render -> list_posts();
+				echo '</div>';
+	
+			}
+	?>
+
+		
+
+	</div>
+</body>
+
+
+
+
+
+
+</html>
